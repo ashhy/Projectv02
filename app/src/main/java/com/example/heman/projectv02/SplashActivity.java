@@ -39,6 +39,13 @@ public class SplashActivity extends AppCompatActivity {
                 }
             });
 
+            try {
+                Thread.sleep(7000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startActivity(new Intent(this,MainActivity.class));
+            finish();
         }
     }
 
