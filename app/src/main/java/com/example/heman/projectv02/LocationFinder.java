@@ -37,7 +37,6 @@ final public class LocationFinder {
     private static FusedLocationProviderClient mFusedLocationProviderClient;
     private static LocationCallback mLocationCallback;
     private static Activity mActivity;
-    private static boolean gpsEnabled;
     private static LocationRequest mLocationRequest;
     private static LocationSettingsRequest mLocationSettingsRequest;
     private static SettingsClient mSettingsClient;
@@ -52,7 +51,6 @@ final public class LocationFinder {
         mActivity = activity;
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(mActivity);
         mSettingsClient = LocationServices.getSettingsClient(mActivity);
-        isGpsEnabled();
         mLocationRequest = new LocationRequest();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mLocationRequest.setFastestInterval(LOCATION_UPDATE_FASTEST);
@@ -64,17 +62,9 @@ final public class LocationFinder {
     }
 
 
-    /**
-    *Call this only and only if Location Permissions have been Enabled
-    */
-    public static boolean isGpsEnabled() {
-        LocationManager locationManager = (LocationManager) mActivity.getSystemService(Context.LOCATION_SERVICE);
-        gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-        return gpsEnabled;
-    }
-
 
     /**
+     * Show a Diialog before calling this function that GPS is necessary With an option of "Enable GPS"
      * Call this whenever Location is Desired
      * And Call this in OnResume
      */

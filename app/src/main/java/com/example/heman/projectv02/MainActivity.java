@@ -32,14 +32,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        LocationFinder.startLocationUpdates();
         //Initial Check
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
             finish();
-            startActivity(new Intent(this, ProfileActivity.class));
             return;
         }
-
         //Declare
         progressDialog = new ProgressDialog(this);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
