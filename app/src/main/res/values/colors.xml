@@ -10,4 +10,12 @@
     <color name="seTitleText">#000000</color>
     <color name="seDescriptionText">#000000</color>
     <color name="seInnerLLText">#000000</color>
+
+
+    <!--Question List Element-->
+    <color name="qleQText">#000000</color>
+    <color name="qleOptionText">#000000</color>
+    <color name="qleOptionUnchecked">#000000</color>
+    <color name="qleOptionChecked">#000000</color>
+
 </resources>

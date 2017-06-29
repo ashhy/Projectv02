@@ -24,4 +24,15 @@
     <string name="seVersion">Version: </string>
     <string name="seLanguage">Language: </string>
     <string name="action_settings">Settings</string>
+
+    <!--Permissions Dialog Alert in SplashActivity-->
+    <string name="saAlertTitle">Permissions Required</string>
+    <string name="saAlertMessage">Please allow all the Permissions requested. You can also set Permissions from Settings.</string>
+    <string name="saPositiveButtonText">OK</string>
+    <string name="saAlertCancelled">The app cannot work without all the Permissions</string>
+    <string name="saPermissionDenied">The app cannot work without all the Permissions</string>
+    <string name="saNeutralButtonText">Settings</string>
+
+    <!--Question List Element-->
+    <string name="qleQText">Question: </string>
 </resources>

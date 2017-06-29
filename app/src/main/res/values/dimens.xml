@@ -18,4 +18,18 @@
     <!--Survey List-->
     <dimen name="slSurveyListPadding">10dp</dimen>
     <dimen name="slSurveyListDividerHeight">10.0sp</dimen>
+    
+    
+    <!--Question List Element-->
+    <dimen name="qleLLPadding">10dp</dimen>
+    <dimen name="qleQTextPadding">5dp</dimen>
+    <dimen name="qleQTextSize">20sp</dimen>
+    <dimen name="qleOTextPadding">5sp</dimen>
+    <dimen name="qleOTextSize">15dp</dimen>
+
+
+
+    <!--Question List-->
+    <dimen name="qlQuestionListPadding">10dp</dimen>
+    <dimen name="qlQuestionListDividerHeight">10.0sp</dimen>
 </resources>

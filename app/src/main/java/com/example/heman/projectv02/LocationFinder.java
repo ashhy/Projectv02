@@ -3,7 +3,6 @@ package com.example.heman.projectv02;
 import android.app.Activity;
 import android.content.Context;
 import android.content.IntentSender;
-import android.location.Location;
 import android.location.LocationManager;
 import android.os.Looper;
 import android.support.annotation.NonNull;
@@ -12,9 +11,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
@@ -45,8 +42,8 @@ final public class LocationFinder {
 
 
     /**
-    * This function needs to be called once in the Splash Activity
-    */
+     * This function needs to be called once in the Splash Activity
+     * */
     public static void init(@NonNull Activity activity,@NonNull LocationCallback locationCallback) {
         mActivity = activity;
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(mActivity);
@@ -62,9 +59,17 @@ final public class LocationFinder {
     }
 
 
+    /**
+     *Returns if GPS is enabled iff Init has been called
+     */
+    public static boolean isGpsEnabled(){
+        if(mActivity==null)return false;
+        return ((LocationManager)mActivity.getSystemService(Context.LOCATION_SERVICE))
+                    .isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
 
     /**
-     * Show a Diialog before calling this function that GPS is necessary With an option of "Enable GPS"
+     * Show a Dialog before calling this function that GPS is necessary With an option of "Enable GPS"
      * Call this whenever Location is Desired
      * And Call this in OnResume
      */

@@ -61,7 +61,8 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
     }
 
     @Override
-    public void onClick(Survey survey) {
+    public void onClick(int position) {
+        Survey survey=surveyList.get(position);
         Log.d("SURVEY CLICKED", survey.getTitle());
         Toast.makeText(this, survey.getTitle(), Toast.LENGTH_LONG).show();
     }

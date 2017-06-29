@@ -23,7 +23,7 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
     private SurveyElementOnClickListener surveyElementOnClickListener;
 
     public interface SurveyElementOnClickListener {
-        void onClick(Survey survey);
+        void onClick(int position);
     }
 
     private static class ViewHolder {
@@ -45,7 +45,7 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Survey survey = (Survey) getItem(position);
+        Survey survey =getItem(position);
         ViewHolder viewHolder;
         viewHolder = new ViewHolder();
         LayoutInflater inflater = LayoutInflater.from(getContext());
@@ -65,7 +65,7 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
 
             @Override
             public void onClick(View view) {
-                surveyElementOnClickListener.onClick(getItem(position));
+                surveyElementOnClickListener.onClick(position);
                 //REMOVE THIS
                 Snackbar.make(finalConvertView, "POSITION" + String.valueOf(position) + getItem(position).getTitle(), Snackbar.LENGTH_LONG).show();
             }
