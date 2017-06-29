@@ -15,7 +15,7 @@
     <!--Question List Element-->
     <color name="qleQText">#000000</color>
     <color name="qleOptionText">#000000</color>
-    <color name="qleOptionUnchecked">#000000</color>
-    <color name="qleOptionChecked">#000000</color>
-
+    <color name="qleOptionUnchecked">#00FF00</color>
+    <color name="qleOptionChecked">#FF00FF</color>
+    <color name="qleCheckedButton">#FF0129</color>
 </resources>

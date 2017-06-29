@@ -24,8 +24,8 @@
     <dimen name="qleLLPadding">10dp</dimen>
     <dimen name="qleQTextPadding">5dp</dimen>
     <dimen name="qleQTextSize">20sp</dimen>
-    <dimen name="qleOTextPadding">5sp</dimen>
-    <dimen name="qleOTextSize">15dp</dimen>
+    <dimen name="qleOTextPadding">5dp</dimen>
+    <dimen name="qleOTextSize">15sp</dimen>
 
 
 

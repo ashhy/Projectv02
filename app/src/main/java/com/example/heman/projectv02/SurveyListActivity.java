@@ -15,8 +15,7 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
 
     ArrayList<Survey> surveyList;
     ListView listView;
-    private static SurveyAdapter adapter;
-
+    private SurveyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
         setContentView(R.layout.activity_survey_list);
 
         listView = (ListView) findViewById(R.id.slSurveyList);
-        surveyList = new ArrayList<Survey>();
+        surveyList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             Survey survey = new Survey();
             survey.setsId(String.valueOf(i));
@@ -65,5 +64,8 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
         Survey survey=surveyList.get(position);
         Log.d("SURVEY CLICKED", survey.getTitle());
         Toast.makeText(this, survey.getTitle(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, QuestionListActivity.class);
+        intent.putExtra("76gj", "dsf");
+        startActivity(intent);
     }
 }
