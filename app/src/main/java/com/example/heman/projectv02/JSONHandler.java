@@ -1,5 +1,8 @@
 package com.example.heman.projectv02;
 
+import com.example.heman.projectv02.SurveyComponents.Question;
+import com.example.heman.projectv02.SurveyComponents.Response;
+import com.example.heman.projectv02.SurveyComponents.Survey;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;

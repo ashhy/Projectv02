@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SurveyComponents;
 
 import android.util.Log;
 
@@ -30,6 +30,9 @@ public class Response {
     private String address;
     private int age;
 
+    public Response() {
+    }
+
     public void addResult(String qNo,String oNo,String option){
         if(result==null)result=new JSONArray();
         JSONObject jsonObject=new JSONObject();
@@ -43,11 +46,6 @@ public class Response {
         }
         result.put(jsonObject);
     }
-
-
-    public Response(){
-    }
-
 
     public String getsId() {
         return sId;

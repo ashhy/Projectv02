@@ -1,14 +1,9 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Adapters;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.os.Build;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
-import android.support.v4.widget.CompoundButtonCompat;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +13,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.heman.projectv02.SurveyComponents.Question;
+import com.example.heman.projectv02.R;
 
 import java.util.ArrayList;
 import java.util.List;

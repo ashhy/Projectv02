@@ -1,10 +1,14 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SqliteDb;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.example.heman.projectv02.SurveyComponents.Question;
+import com.example.heman.projectv02.SurveyComponents.Response;
+import com.example.heman.projectv02.SurveyComponents.Survey;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,11 +24,10 @@ import java.util.List;
 
 //TODO: SEND THIS OBJECT ON EVERY ACTIVITY CALL STARTING FROM SPLASH SCREEN::: OR MAKE CODE SUCH THAT IT CAN HANDLE ALL THAT
 public class SurveyDbHandler implements DbConstant {
+    private static final String RESPONSE_RID = "rId";
+    private static final String RESPONSE_SYNCED = "synced";
     private SurveyDbOpenHelper surveyDbOpenHelper;
     private SQLiteDatabase db;
-
-    private static final String RESPONSE_RID="rId";
-    private static final String RESPONSE_SYNCED="synced";
 
 
     public SurveyDbHandler(Context context) {
@@ -47,7 +50,12 @@ public class SurveyDbHandler implements DbConstant {
         values.put(COL_LANGUAGE, survey.getLanguage());
         values.put(COL_TOTALQ, survey.getTotalQuestions());
         values.put(COL_VERSION, survey.getVersion());
-        return db.insertOrThrow(TABLE_SURVEY, null, values);
+        try {
+            return db.insert(TABLE_SURVEY, null, values);
+        } catch (Exception w) {
+            Log.d("EXCEPTION  IS HERE", w.getMessage() + "\n" + w.getLocalizedMessage());
+        }
+        return -23;
     }
 
     public long storeQuestion(Question question) {

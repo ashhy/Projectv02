@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SqliteDb;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

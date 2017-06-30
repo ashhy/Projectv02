@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.heman.projectv02.QuestionListActivity">
+    tools:context="com.example.heman.projectv02.Activity.QuestionListActivity">
 
     <ListView
         android:id="@+id/qlQuestionList"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:divider="@android:color/transparent"
         android:dividerHeight="@dimen/qlQuestionListDividerHeight"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/qlQuestionListPadding"
         android:paddingLeft="@dimen/qlQuestionListPadding"
-        android:paddingRight="@dimen/qlQuestionListPadding" />
+        android:paddingRight="@dimen/qlQuestionListPadding"
+        android:paddingTop="@dimen/qlQuestionListPadding" />
 
 </android.support.constraint.ConstraintLayout>

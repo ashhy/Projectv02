@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.heman.projectv02.R;
+import com.example.heman.projectv02.SharedPreferences.SharedPrefManager;
+import com.example.heman.projectv02.SurveyComponents.Survey;
+import com.example.heman.projectv02.Adapters.SurveyAdapter;
+import com.example.heman.projectv02.SqliteDb.SurveyDbHandler;
 
 import java.util.ArrayList;
 
@@ -21,7 +27,8 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey_list);
-
+        SurveyDbHandler surveyDbHandler = new SurveyDbHandler(this);
+        surveyDbHandler.setUpDb();
         listView = (ListView) findViewById(R.id.slSurveyList);
         surveyList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -30,11 +37,16 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
             survey.setTitle("Title " + String.valueOf(i));
             survey.setDescription("Desctiption " + String.valueOf(i));
             survey.setTotalQuestions(i);
-            survey.setLanguage(String.valueOf(i));
+            survey.setLanguage("en");
             survey.setVersion(i);
             surveyList.add(survey);
+            Log.d("Survey Returns ", String.valueOf(surveyDbHandler.storeSurvey(survey)));
+            Log.d("Survey Stored", "int i = " + String.valueOf(i));
         }
-        adapter = new SurveyAdapter(this, surveyList, this);
+
+        ArrayList<Survey> newSurveyList = (ArrayList<Survey>) surveyDbHandler.getSurveyList("en");
+        if (newSurveyList == null) Log.d("New Survey List Adapter is NULL", "asdasd");
+        adapter = new SurveyAdapter(this, newSurveyList, this);
         listView.setAdapter(adapter);
     }
 

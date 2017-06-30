@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.example.heman.projectv02.R;
+import com.example.heman.projectv02.SurveyComponents.Survey;
 
 import java.util.ArrayList;
 
@@ -22,25 +25,12 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
     private Context context;
     private SurveyElementOnClickListener surveyElementOnClickListener;
 
-    public interface SurveyElementOnClickListener {
-        void onClick(int position);
-    }
-
-    private static class ViewHolder {
-        TextView title;
-        TextView description;
-        TextView totalQ;
-        TextView language;
-        TextView version;
-    }
-
     public SurveyAdapter(Context context, ArrayList<Survey> surveyList, SurveyAdapter.SurveyElementOnClickListener surveyElementOnClickListener) {
         super(context, R.layout.survey_list_element, surveyList);
         this.context = context;
         this.surveyList = surveyList;
         this.surveyElementOnClickListener = surveyElementOnClickListener;
     }
-
 
     @NonNull
     @Override
@@ -50,11 +40,11 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
         viewHolder = new ViewHolder();
         LayoutInflater inflater = LayoutInflater.from(getContext());
         convertView = inflater.inflate(R.layout.survey_list_element, parent, false);
-        viewHolder.title = (TextView) convertView.findViewById(R.id.seTitle);
-        viewHolder.description = (TextView) convertView.findViewById(R.id.seDescription);
-        viewHolder.totalQ = (TextView) convertView.findViewById(R.id.seTotalQ);
-        viewHolder.language = (TextView) convertView.findViewById(R.id.seLanguage);
-        viewHolder.version = (TextView) convertView.findViewById(R.id.seVersion);
+        viewHolder.title = convertView.findViewById(R.id.seTitle);
+        viewHolder.description = convertView.findViewById(R.id.seDescription);
+        viewHolder.totalQ = convertView.findViewById(R.id.seTotalQ);
+        viewHolder.language = convertView.findViewById(R.id.seLanguage);
+        viewHolder.version = convertView.findViewById(R.id.seVersion);
         viewHolder.title.setText(survey.getTitle());
         viewHolder.description.setText(survey.getDescription());
         viewHolder.totalQ.setText(getContext().getString(R.string.seTotalQ) + String.valueOf(survey.getTotalQuestions()));
@@ -76,5 +66,17 @@ public class SurveyAdapter extends ArrayAdapter<Survey> {
         viewHolder.language.setOnClickListener(vOnClick);
         viewHolder.version.setOnClickListener(vOnClick);
         return convertView;
+    }
+
+    public interface SurveyElementOnClickListener {
+        void onClick(int position);
+    }
+
+    private static class ViewHolder {
+        TextView title;
+        TextView description;
+        TextView totalQ;
+        TextView language;
+        TextView version;
     }
 }

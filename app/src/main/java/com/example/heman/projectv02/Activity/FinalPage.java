@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Activity;
 
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.heman.projectv02.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.common.api.ResolvableApiException;
@@ -39,16 +40,15 @@ public class FinalPage extends AppCompatActivity implements View.OnClickListener
 
     //Declare
 
-    private Button buttonSubmit;
-    private TextView tvLat, tvLong;
+    private final int PERMISSION_LIST_REQUEST_CODE = 123;
     public double latitude,longitude;
     boolean locationAvailable;
     boolean locationRequired;
-    private FusedLocationProviderClient fusedLocationProviderClient;
     LocationCallback locationCallback;
     Location lastLocation;
-    private final int PERMISSION_LIST_REQUEST_CODE=123;
-
+    private Button buttonSubmit;
+    private TextView tvLat, tvLong;
+    private FusedLocationProviderClient fusedLocationProviderClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

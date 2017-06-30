@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -14,6 +14,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.heman.projectv02.Constants;
+import com.example.heman.projectv02.R;
+import com.example.heman.projectv02.RequestHandler;
+import com.example.heman.projectv02.SharedPreferences.SharedPrefManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LocationFinder.startLocationUpdates();
+        //LocationFinder.startLocationUpdates();
         //Initial Check
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
             finish();

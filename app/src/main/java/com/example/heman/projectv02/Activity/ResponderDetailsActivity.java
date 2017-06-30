@@ -1,7 +1,9 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.heman.projectv02.R;
 
 public class ResponderDetailsActivity extends AppCompatActivity {
 

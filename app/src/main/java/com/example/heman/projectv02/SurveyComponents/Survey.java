@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SurveyComponents;
 
 /**
  * Created by yashjain on 6/26/17.

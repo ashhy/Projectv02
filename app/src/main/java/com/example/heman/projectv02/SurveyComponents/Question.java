@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SurveyComponents;
 
 import android.content.Intent;
 import android.util.Log;

@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.SqliteDb;
 
 /**
  * Created by yashjain on 6/27/17.

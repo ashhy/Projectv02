@@ -1,4 +1,4 @@
-package com.example.heman.projectv02;
+package com.example.heman.projectv02.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,15 +11,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.heman.projectv02.R;
+import com.example.heman.projectv02.SharedPreferences.SharedPrefManager;
+
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Declare
     private static final int MY_PERMISSIONS_REQUEST_CODE = 1;
+    Context context;
     private TextView textViewUsername, textViewUserEmail;
     private Button buttonGPS;
-    Context context;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
