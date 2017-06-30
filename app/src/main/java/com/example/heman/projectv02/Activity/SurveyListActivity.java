@@ -40,12 +40,12 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
             survey.setLanguage("en");
             survey.setVersion(i);
             surveyList.add(survey);
-            Log.d("Survey Returns ", String.valueOf(surveyDbHandler.storeSurvey(survey)));
-            Log.d("Survey Stored", "int i = " + String.valueOf(i));
+
+            //TODO: CALL THE BELOW LINE ONLY ONCE AND THEN DONT CALL IT
+            //Log.d("Survey Returns ",String.valueOf(surveyDbHandler.storeSurvey(survey)));
         }
 
         ArrayList<Survey> newSurveyList = (ArrayList<Survey>) surveyDbHandler.getSurveyList("en");
-        if (newSurveyList == null) Log.d("New Survey List Adapter is NULL", "asdasd");
         adapter = new SurveyAdapter(this, newSurveyList, this);
         listView.setAdapter(adapter);
     }

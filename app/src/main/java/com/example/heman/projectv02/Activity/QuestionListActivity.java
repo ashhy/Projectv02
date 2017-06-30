@@ -26,7 +26,7 @@ public class QuestionListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_list);
         listView= (ListView) findViewById(R.id.qlQuestionList);
-        questionList=new ArrayList<Question>();
+        questionList = new ArrayList<>();
         SurveyDbHandler surveyDbHandler = new SurveyDbHandler(this);
         surveyDbHandler.setUpDb();
         for(int i=0;i<10;i++){
@@ -46,8 +46,11 @@ public class QuestionListActivity extends AppCompatActivity {
             question.setOptions(object);
             question.setMultiSelect(i%2==0);
             question.setsId("1");
-            surveyDbHandler.storeQuestion(question);
             questionList.add(question);
+
+            //TODO: CALL THE BELOW LINE ONLY ONCE AND THEN NEVER AGAIN
+            //surveyDbHandler.storeQuestion(question);
+
         }
 
         adapter = new QuestionAdapter(this, (ArrayList<Question>) surveyDbHandler.getQuestionsForSurvey("en", "1"), null);

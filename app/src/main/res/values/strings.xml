@@ -35,4 +35,14 @@
 
     <!--Question List Element-->
     <string name="qleQText">Question: </string>
+
+
+    <!--Question List-->
+    <string name="qlButtonSubmit">Submit</string>
+    <string name="qlButtonNext">Next</string>
+
+    <!--Menus -->
+    <string name="menuSettings">Settings</string>
+    <string name="menuLogout">Logout</string>
+    <string name="FinalPage">Final Page</string>
 </resources>

@@ -18,4 +18,8 @@
     <color name="qleOptionUnchecked">#00FF00</color>
     <color name="qleOptionChecked">#FF00FF</color>
     <color name="qleCheckedButton">#FF0129</color>
+    <color name="qlNextSubmitText">#000000</color>
+    <color name="qlNextSubmitBckg">#FF0129</color>
+    <color name="qlNextSubmitBckgTint">#00FF00</color>
+
 </resources>

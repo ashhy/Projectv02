@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.heman.projectv02.Activity.QuestionListActivity">
 
-    <ListView
-        android:id="@+id/qlQuestionList"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="@dimen/qlQuestionListDividerHeight"
-        android:paddingLeft="@dimen/qlQuestionListPadding"
-        android:paddingRight="@dimen/qlQuestionListPadding"
-        android:paddingTop="@dimen/qlQuestionListPadding" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="7">
 
-</android.support.constraint.ConstraintLayout>
+        <ListView
+            android:id="@+id/qlQuestionList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/qlQuestionListDividerHeight"
+            android:paddingLeft="@dimen/qlQuestionListPadding"
+            android:paddingRight="@dimen/qlQuestionListPadding"
+            android:paddingTop="@dimen/qlQuestionListPadding" />
+
+        <Button
+            android:id="@+id/qlNextSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/qlNextSubmitBckg"
+            android:backgroundTint="@color/qlNextSubmitBckgTint"
+            android:padding="@dimen/qlNextSubmitPadding"
+            android:text="@string/qlButtonSubmit"
+            android:textColor="@color/qlNextSubmitText"
+            android:textSize="@dimen/qlNextSubmitTextSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

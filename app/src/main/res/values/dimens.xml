@@ -32,4 +32,6 @@
     <!--Question List-->
     <dimen name="qlQuestionListPadding">10dp</dimen>
     <dimen name="qlQuestionListDividerHeight">10.0sp</dimen>
+    <dimen name="qlNextSubmitTextSize">20sp</dimen>
+    <dimen name="qlNextSubmitPadding">7dp</dimen>
 </resources>
