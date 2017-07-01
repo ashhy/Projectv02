@@ -6,7 +6,6 @@
     <item
         android:id="@+id/FinalPage"
         android:title="@string/FinalPage"
-
         />
 
     <item
