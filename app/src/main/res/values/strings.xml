@@ -2,6 +2,12 @@
     <string name="app_name">Projectv02</string>
     <string name="title_activity_login">Sign in</string>
 
+    <!--Strings related to main page-->
+    <string name="intro">This is a survey app made by 5 most hardworking kids in the history of app making(in between the bunch of lazy morons working at techm)</string>
+    <string name="intro_app">About The Applicaion</string>
+    <string name="button">To go to the Login Page</string>
+
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
