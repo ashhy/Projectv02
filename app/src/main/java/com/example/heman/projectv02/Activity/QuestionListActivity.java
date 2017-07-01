@@ -2,6 +2,7 @@ package com.example.heman.projectv02.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -9,10 +10,16 @@ import com.example.heman.projectv02.SurveyComponents.Question;
 import com.example.heman.projectv02.Adapters.QuestionAdapter;
 import com.example.heman.projectv02.R;
 import com.example.heman.projectv02.SqliteDb.SurveyDbHandler;
+import com.example.heman.projectv02.SurveyComponents.Survey;
+import com.google.gson.ExclusionStrategy;
+import com.google.gson.FieldAttributes;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class QuestionListActivity extends AppCompatActivity {
@@ -53,7 +60,22 @@ public class QuestionListActivity extends AppCompatActivity {
 
         }
 
-        adapter = new QuestionAdapter(this, (ArrayList<Question>) surveyDbHandler.getQuestionsForSurvey("en", "1"), null);
+        ArrayList<Question> newQuestionList = (ArrayList<Question>) surveyDbHandler.getQuestionsForSurvey("en", "1");
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<Question>>() {
+        }.getType();
+        String jsonString = gson.toJson(newQuestionList, type);
+        Log.d("Survey JSON String", "STRING::::::\n\n\n" + jsonString);
+
+        ArrayList<Question> jsonQuestion = gson.fromJson(jsonString, type);
+
+        if (jsonQuestion == null) {
+            Log.d("JSON SURVEY IS ", "NULL!!!");
+        }
+
+        adapter = new QuestionAdapter(this, jsonQuestion, null);
         listView.setAdapter(adapter);
     }
+
 }

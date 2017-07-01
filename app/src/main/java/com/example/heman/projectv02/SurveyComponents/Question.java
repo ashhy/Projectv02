@@ -1,13 +1,20 @@
 package com.example.heman.projectv02.SurveyComponents;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.annotation.IntegerRes;
+import android.util.ArraySet;
 import android.util.Log;
+
+import com.google.gson.annotations.Expose;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by yashjain on 6/26/17.
@@ -21,10 +28,13 @@ public class Question {
     private JSONObject options;
     private String language;
     private boolean multiSelect;
-    transient private List<String> optionArray;
-    transient private List<Integer> selectedOptions=new ArrayList<Integer>();
+    @Expose
+    transient private String[] optionArray;
+    @Expose
+    transient private Set<Integer> selectedOptions;
 
     public Question() {
+        selectedOptions = new HashSet<Integer>();
     }
 
     public String getqText() {
@@ -78,10 +88,10 @@ public class Question {
 
     public void setOptionArray(){
         int length=options.length();
-        optionArray=new ArrayList<String>();
+        optionArray = new String[length];
         for(int i=0;i<length;i++){
             try {
-                optionArray.add(options.getString(String.valueOf(i)));
+                optionArray[i] = options.getString(String.valueOf(i));
             } catch (JSONException e) {
                 e.printStackTrace();
                 Log.d("ERROR PARSING OPTION",e.getMessage()+"\n"+options.toString());
@@ -90,11 +100,11 @@ public class Question {
     }
 
 
-    public List<Integer> getSelectedOptions() {
+    public Set<Integer> getSelectedOptions() {
         return selectedOptions;
     }
 
-    public void setSelectedOptions(List<Integer> selectedOptions) {
+    public void setSelectedOptions(Set<Integer> selectedOptions) {
         this.selectedOptions = selectedOptions;
     }
 
@@ -102,25 +112,26 @@ public class Question {
         if(multiSelect)
         selectedOptions.add(index);
         else {
-            selectedOptions=new ArrayList<Integer>();
+            selectedOptions.clear();
             selectedOptions.add(index);
         }
     }
 
     public void removeSelectedOption(Integer index){
-        if(multiSelect)
         selectedOptions.remove(index);
-        else {
-            selectedOptions=new ArrayList<Integer>();
-        }
     }
 
-    public List<String> getOptionArray(){
+    public String[] getOptionArray() {
         if(optionArray==null)setOptionArray();
         return optionArray;
     }
 
-    public void setOptionArray(List<String> optionArray){
+    public void setOptionArray(String[] optionArray) {
         this.optionArray=optionArray;
+    }
+
+    public boolean isOptionSelected(int i) {
+        getOptionArray();
+        return selectedOptions.contains(i);
     }
 }

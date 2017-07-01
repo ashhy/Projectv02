@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.heman.projectv02">
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -8,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
@@ -19,21 +21,25 @@
         <activity android:name=".Activity.MainActivity"></activity>
         <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.SurveyListActivity">
-        </activity>
-        <activity android:name=".Activity.FinalPage" />
-        <activity
-            android:name=".Activity.SplashActivity"
-            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".Activity.FinalPage" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:theme="@style/SplashTheme"></activity>
         <activity android:name=".Activity.QuestionListActivity" />
         <activity android:name=".Activity.ResponderDetailsActivity" />
+
         <receiver
             android:name=".NetworkReceiver"
             android:enabled="true"
             android:exported="true"></receiver>
     </application>
+
 </manifest>
