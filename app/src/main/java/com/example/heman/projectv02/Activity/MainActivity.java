@@ -2,11 +2,13 @@ package com.example.heman.projectv02.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -36,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView a, b;
+        a = (TextView) findViewById(R.id.textViewUsername);
+        b = (TextView) findViewById(R.id.textViewPassword);
+        Typeface ab = Typeface.createFromAsset(getAssets(), "fonts/ft.ttf");
+        a.setTypeface(ab);
+        b.setTypeface(ab);
         //LocationFinder.startLocationUpdates();
         //Initial Check
         if(SharedPrefManager.getInstance(this).isLoggedIn()){

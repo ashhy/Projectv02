@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="splashColor">#44D4FF</color>
+    <color name="colorPrimary">#5d4037</color>
+    <color name="colorPrimaryDark">#3e2723</color>
+    <color name="colorAccent">#ffc107</color>
+    <color name="splashColor">#512da8</color>
+    <color name="common">#fff8e1</color>
+    <color name="borderColor">#8d6e63</color>
 
     <!--Survey List Element-->
-    <color name="seBckg">#FFEBCD</color>
-    <color name="seTitleText">#000000</color>
-    <color name="seDescriptionText">#000000</color>
-    <color name="seInnerLLText">#000000</color>
+    <color name="seBckg">#bcaaa4</color>
+    <color name="seTitleText">#4527a0</color>
+    <color name="seDescriptionText">#303f9f</color>
+    <color name="seInnerLLText">#1b5e20</color>
 
 
     <!--Question List Element-->

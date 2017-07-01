@@ -3,18 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
     tools:context="aiims.survey.techmahindra.aiimssurvey.SurveyListActivity">
 
     <ListView
         android:id="@+id/slSurveyList"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:divider="@android:color/transparent"
         android:dividerHeight="@dimen/slSurveyListDividerHeight"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/slSurveyListPadding"
         android:paddingLeft="@dimen/slSurveyListPadding"
-        android:paddingRight="@dimen/slSurveyListPadding" />
+        android:paddingRight="@dimen/slSurveyListPadding"
+        android:paddingTop="@dimen/slSurveyListPadding" />
 
 </LinearLayout>

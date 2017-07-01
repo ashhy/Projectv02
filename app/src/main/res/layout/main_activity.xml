@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bggggg" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -18,11 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@android:fresca"
         android:text="@string/intro_app"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:typeface="sans" />
 
     <TextView
+        android:id="@+id/text_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -34,7 +44,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@id/button_0"
+        android:id="@+id/next_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,5 +65,17 @@
         android:layout_marginRight="12dp"
         android:text="@string/button"
         android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/exit_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:onClick="exitApp"
+        android:text="Exit" />
 
 </RelativeLayout>
