@@ -10,7 +10,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.heman.projectv02.SurveyComponents.Survey;
 
 import com.example.heman.projectv02.Constants;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 
@@ -32,7 +35,10 @@ public class SurveySync {
                     @Override
                     public void onResponse(String response) {
                         //TODO: DECIDE FORMATE AND PROCEED ACCORDINGLY
-
+                        Gson gson = new Gson();
+                        Type type = new TypeToken<ArrayList<Survey>>() {
+                        }.getType();
+                        ArrayList<Survey> jsonSurvey = gson.fromJson(response, type);
 
                     }
                 },
