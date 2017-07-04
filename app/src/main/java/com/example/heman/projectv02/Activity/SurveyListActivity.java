@@ -14,8 +14,13 @@ import com.example.heman.projectv02.SharedPreferences.SharedPrefManager;
 import com.example.heman.projectv02.SurveyComponents.Survey;
 import com.example.heman.projectv02.Adapters.SurveyAdapter;
 import com.example.heman.projectv02.SqliteDb.SurveyDbHandler;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SurveyListActivity extends AppCompatActivity implements SurveyAdapter.SurveyElementOnClickListener {
 
@@ -46,7 +51,20 @@ public class SurveyListActivity extends AppCompatActivity implements SurveyAdapt
         }
 
         ArrayList<Survey> newSurveyList = (ArrayList<Survey>) surveyDbHandler.getSurveyList("en");
-        adapter = new SurveyAdapter(this, newSurveyList, this);
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<Survey>>() {
+        }.getType();
+        String jsonString = gson.toJson(newSurveyList, type);
+        Log.d("Survey JSON String", "STRING::::::\n\n\n" + jsonString);
+
+        ArrayList<Survey> jsonSurvey = gson.fromJson(jsonString, type);
+
+        if (jsonSurvey == null) {
+            Log.d("JSON SURVEY IS ", "NULL!!!");
+        }
+
+        adapter = new SurveyAdapter(this, jsonSurvey, this);
         listView.setAdapter(adapter);
     }
 

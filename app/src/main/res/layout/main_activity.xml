@@ -7,8 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bggggg" />
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,7 +25,6 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:fontFamily="@android:fresca"
         android:text="@string/intro_app"
         android:textSize="20sp"
         android:typeface="sans" />
